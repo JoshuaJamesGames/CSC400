@@ -2,8 +2,8 @@ package CSC400;
 
 public interface Bag {
 
-    abstract boolean add();
-    abstract boolean remove();
+    abstract boolean add(Object anEntry);
+    abstract boolean remove(Object anEntry);
     abstract boolean isFull();
     abstract <T> T[] toArray();
 

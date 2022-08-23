@@ -24,14 +24,20 @@ public class ShoppingCart implements Bag{
     }
     
     @Override
-    public boolean add(MyType anEntry) {
+    public boolean add(Object anEntry) {
         //
-        
+        if(!isFull()){
+            for(int i = 0; i < myBag.length; i++){
+                if(myBag[i] != null){
+                    myBag[i]= (MyType) anEntry;
+                }
+            }
+        }
         return false;
     }
 
     @Override
-    public boolean remove() {
+    public boolean remove(Object anEntry) {
         //
         return false;
     }
