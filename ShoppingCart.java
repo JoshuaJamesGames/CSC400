@@ -25,7 +25,7 @@ public class ShoppingCart implements Bag{
     
     @Override
     public boolean add(Object anEntry) {
-        //
+        //Look for the first empty spot and fill it, if there are any
         if(!isFull()){
             for(int i = 0; i < myBag.length; i++){
                 if(myBag[i] != null){
