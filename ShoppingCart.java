@@ -13,9 +13,9 @@ public class ShoppingCart implements Bag{
     }
 
     ShoppingCart(int Default_Capacity){
-        //
+        //Create an Array of MyType of size Default_Capacity
         myBag = new MyType[Default_Capacity];
-        //
+        //Set all elements to null
         for(int i=0; i<myBag.length; i++){
             myBag[i]=null;
         }
@@ -24,7 +24,7 @@ public class ShoppingCart implements Bag{
     }
     
     @Override
-    public boolean add() {
+    public boolean add(MyType anEntry) {
         //
         
         return false;
@@ -32,7 +32,7 @@ public class ShoppingCart implements Bag{
 
     @Override
     public boolean remove() {
-        // TODO Auto-generated method stub
+        //
         return false;
     }
 
