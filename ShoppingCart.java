@@ -7,7 +7,7 @@ public class ShoppingCart implements Bag{
     int Default_Capacity;
 
     ShoppingCart(){
-        //
+        //Default constructor sets Default_Capacity to 1
         myBag = new MyType[1];
         Default_Capacity = 1;
     }
