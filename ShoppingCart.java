@@ -61,9 +61,19 @@ public class ShoppingCart implements Bag{
     }
 
     
-    public <T> T[] toArray() {
-        //
-        return null;
+    public MyType[] toArray() {
+        //Return a Contiguous array of MyType from myBag
+        MyType[] returnArray = new MyType[numberOfProducts];
+        int returnIndex = 0;
+        int myTypeIndex = 0;
+        while(myTypeIndex < numberOfProducts){
+            if(myBag[myTypeIndex] != null){
+                returnArray[returnIndex] = myBag[myTypeIndex];
+                returnIndex++;
+            }
+            myTypeIndex++;
+        }
+        return returnArray;
     }
     
 }
