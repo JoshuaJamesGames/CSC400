@@ -2,18 +2,20 @@
 public class ShoppingCart implements Bag{
 
     MyType[] myBag;
-    int numberOfProducts = 0;
+    int numberOfProducts;
     int Default_Capacity;
 
     ShoppingCart(){
         //Default constructor sets Default_Capacity to 1
         myBag = new MyType[1];
+        numberOfProducts = 0;
         Default_Capacity = 1;
     }
 
     ShoppingCart(int Default_Capacity){
         //Create an Array of MyType of size Default_Capacity
         myBag = new MyType[Default_Capacity];
+        numberOfProducts = 0;
         //Set all elements to null
         for(int i=0; i<myBag.length; i++){
             myBag[i]=null;
@@ -27,10 +29,11 @@ public class ShoppingCart implements Bag{
         //Look for the first empty spot and fill it, if there are any
         if(!isFull()){
             for(int i = 0; i < myBag.length; i++){
-                if(myBag[i] != null){
+                System.out.println(myBag[i]);
+                if(myBag[i] == null){
                     myBag[i]= (MyType) anEntry;
                     numberOfProducts++;
-                    return true;
+                    return true;                    
                 }
             }
         }
@@ -54,9 +57,9 @@ public class ShoppingCart implements Bag{
     public boolean isFull() {
         //
         if(numberOfProducts < Default_Capacity){
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         }        
     }
 

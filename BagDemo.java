@@ -16,6 +16,7 @@ public class BagDemo {
     //Required function from the assignment
     //Will add content to the Bag
     public static void testAddl(ShoppingCart myCart){
+        System.out.println(myCart.isFull());
         System.out.println(myCart.add(new MyType(1, "Beans", 2.00)));
     }
 
