@@ -23,7 +23,7 @@ public class ShoppingCart implements Bag{
         this.Default_Capacity = Default_Capacity;
     }
     
-    @Override
+    
     public boolean add(Object anEntry) {
         //Look for the first empty spot and fill it, if there are any
         if(!isFull()){
@@ -38,7 +38,7 @@ public class ShoppingCart implements Bag{
         return false;
     }
 
-    @Override
+    
     public boolean remove(Object anEntry) {
         //Iterate through the myBag Array, looking for a match
         for(int i = 0; i < myBag.length; i++){
@@ -51,7 +51,7 @@ public class ShoppingCart implements Bag{
         return false;
     }
 
-    @Override
+    
     public boolean isFull() {
         //
         if(numberOfProducts < Default_Capacity){
@@ -61,7 +61,7 @@ public class ShoppingCart implements Bag{
         }        
     }
 
-    @Override
+    
     public <T> T[] toArray() {
         //
         return null;
