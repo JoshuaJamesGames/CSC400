@@ -1,4 +1,4 @@
-package CSC400;
+
 
 public class BagDemo {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class BagDemo {
     //Required function from the assignment
     //Will add content to the Bag
     public static void testAddl(ShoppingCart myCart){
-
+        
     }
 
     //Required function from the assignment - 
