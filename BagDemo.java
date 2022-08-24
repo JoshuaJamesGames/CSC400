@@ -7,21 +7,22 @@ public class BagDemo {
         ShoppingCart myCart = new ShoppingCart(10);
         
         //testAddl()
-
+        testAddl(myCart);
 
         //displayBag()
+        displayBag(myCart);
     }
 
     //Required function from the assignment
-    //Will add several MyType objects to the shopping cart
-    public static void testAddl(){
+    //Will add content to the Bag
+    public static void testAddl(ShoppingCart myCart){
 
     }
 
-    //Required function from the assignment
-    //Will print out contents of the shopping cart 
+    //Required function from the assignment - 
+    //Will display the contents of the Bag 
     //leveraging toArray and toString
-    public static void displayBag(){
+    public static void displayBag(ShoppingCart myCart){
 
     }
 }
