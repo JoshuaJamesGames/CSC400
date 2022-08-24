@@ -29,7 +29,7 @@ public class ShoppingCart implements Bag{
         //Look for the first empty spot and fill it, if there are any
         if(!isFull()){
             for(int i = 0; i < myBag.length; i++){
-                System.out.println(myBag[i]);
+                
                 if(myBag[i] == null){
                     myBag[i]= (MyType) anEntry;
                     numberOfProducts++;
