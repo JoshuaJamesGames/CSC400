@@ -31,6 +31,7 @@ public class ShoppingCart implements Bag{
                 if(myBag[i] != null){
                     myBag[i]= (MyType) anEntry;
                     numberOfProducts++;
+                    return true;
                 }
             }
         }
@@ -39,11 +40,12 @@ public class ShoppingCart implements Bag{
 
     @Override
     public boolean remove(Object anEntry) {
-        //
+        //Iterate through the myBag Array, looking for a match
         for(int i = 0; i < myBag.length; i++){
             if(myBag[i].equals(anEntry)){
                 myBag[i]=null;
                 numberOfProducts--;
+                return true;
             }
         }
         return false;
