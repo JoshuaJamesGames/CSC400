@@ -16,8 +16,10 @@ public class BagDemo {
     //Required function from the assignment
     //Will add content to the Bag
     public static void testAddl(ShoppingCart myCart){
-        System.out.println(myCart.isFull());
-        System.out.println(myCart.add(new MyType(1, "Beans", 2.00)));
+        
+        myCart.add(new MyType(1, "Beans", 2.49));
+        myCart.add(new MyType(1, "Rice", 1.99));
+        myCart.add(new MyType(1, "Chicken", 6.29));
     }
 
     //Required function from the assignment - 
@@ -25,6 +27,9 @@ public class BagDemo {
     //leveraging toArray and toString
     public static void displayBag(ShoppingCart myCart){
 
-        System.out.println(myCart.toArray()[0]);
+        MyType[] printArray = myCart.toArray();
+        for(int i = 0; i < printArray.length; i++){
+            System.out.println(printArray[i]);
+        }
     }
 }
