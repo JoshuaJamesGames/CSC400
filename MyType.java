@@ -1,4 +1,4 @@
-package CSC400;
+
 
 public class MyType {
 
