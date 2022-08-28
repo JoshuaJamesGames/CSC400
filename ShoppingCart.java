@@ -55,7 +55,7 @@ public class ShoppingCart implements Bag{
 
     
     public boolean isFull() {
-        //
+        //Simple comparison of stored attributes
         if(numberOfProducts < Default_Capacity){
             return false;
         }else{
