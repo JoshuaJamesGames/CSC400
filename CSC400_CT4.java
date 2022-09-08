@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class CSC400_CT4 {
     public static void main(String[] args) {
         
@@ -6,13 +8,21 @@ public class CSC400_CT4 {
     public String convertToPostfix(String infix){
     
         /* Converts an infix expression to an equivalent postfix expression.
-        operatorStack = a new empty stack
-        postfix = a new empty string
-        while (infix has characters left to parse)
+        
         */
+        
+        Stack<Character> operatorStack = new Stack<Character>();
         String postfix = new String();
 
-        //nextCharacter = next nonblank character of infix
+        //Remove whitespace
+        infix = infix.replaceAll("\\s", "");
+
+        //while (infix has characters left to parse){}
+
+        char nextCharacter = infix.charAt(0);
+
+        infix = infix.substring(1);
+        
         switch (nextCharacter){
             case variable:
             //Append nextCharacter to postfix
@@ -31,7 +41,7 @@ public class CSC400_CT4 {
                 operatorStack.push(nextCharacter);
                 break;
             case ')' : // Stack is not empty if infix expression is valid
-                topOperator = operatorStack.pop();
+                char topOperator = operatorStack.pop();
                 while (topOperator != '('){
                     //Append topOperator to postfix
                     topOperator = operatorStack.pop();
@@ -41,7 +51,8 @@ public class CSC400_CT4 {
         }
     
         while (!operatorStack.isEmpty()){
-            topOperator = operatorStack.pop(); //Append topOperator to postfix
+            char topOperator = operatorStack.pop(); 
+            //Append topOperator to postfix
         }
         return postfix;
     }
