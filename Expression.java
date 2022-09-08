@@ -1,3 +1,5 @@
+//Rather than implementing my own Stack class
+//The textbook suggests using the Java built-in
 import java.util.Stack;
 
 public class Expression {
@@ -5,21 +7,23 @@ public class Expression {
     private String infix = "";
     private String postfix = "";
 
+    //Constructor - no default
     Expression(String infix){
         this.infix = infix;
         this.postfix = convertToPostfix(infix);
     }
 
+    //Only a getter for postfix is required
     public String getPostfix(){
         return postfix;
     }
 
-    static String convertToPostfix(String infix){
     
-        /* Converts an infix expression to an equivalent postfix expression.
-        
-        */
-        
+    static String convertToPostfix(String infix){
+
+        //Helper function to create postfix from the textbook
+        //Converts an infix expression to an equivalent postfix expression.
+               
         Stack<Character> operatorStack = new Stack<Character>();
         String postfix = "";
 
@@ -93,7 +97,6 @@ public class Expression {
         int currentOperatorValue = operatorValue(currentOperator);
         int nextOperatorValue = operatorValue(nextOperator);
 
-        //Need an if/else stack when using boolean logic
         //compare the values
         if(nextOperatorValue <= currentOperatorValue){
             return true;
