@@ -3,9 +3,18 @@ import java.util.Stack;
 public class CSC400_CT4 {
     public static void main(String[] args) {
         
+        String test1 = "(a+b)/(c-d)";
+        String test2 = "a/(b-c)*d";
+        String test3 = "a-(b/(c-d)*e+f)^g";
+        String test4 = "(a-b*c)/(d*e^f*g+h)";
+        String test5 = "a/b*(c+(d-e))";
+
+        System.out.println(convertToPostfix(test5));
+        
+
     }
 
-    public String convertToPostfix(String infix){
+    public static String convertToPostfix(String infix){
     
         /* Converts an infix expression to an equivalent postfix expression.
         
@@ -19,6 +28,9 @@ public class CSC400_CT4 {
 
         //While infix has characters left to process
         while (infix.length() > 0){
+            System.out.print(postfix + "  ");
+            System.out.print(infix + "  ");
+            System.out.println(operatorStack);
 
             char nextCharacter = infix.charAt(0);
 
@@ -64,7 +76,7 @@ public class CSC400_CT4 {
         return postfix;
     }
 
-    public boolean checkPrecedence(char currentOperator, char nextOperator){
+    public static boolean checkPrecedence(char currentOperator, char nextOperator){
         //compares the currentOperator to nextOperator
         //if nextOperator is ^, +, -, *, / and <= in precedence, return true
 
@@ -82,10 +94,11 @@ public class CSC400_CT4 {
         return false;
     }
 
-    public int operatorValue(char operator){
+    public static int operatorValue(char operator){
         //Since ASCII values are not in-order we need to assign our own
 
         switch(operator){
+            case '(': case ')': return 4;
             case '^': return 3;
             case '*': case '/': return 2;
             case '+': case '-': return 1;
