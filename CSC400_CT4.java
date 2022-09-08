@@ -12,44 +12,49 @@ public class CSC400_CT4 {
         */
         
         Stack<Character> operatorStack = new Stack<Character>();
-        String postfix = new String();
+        String postfix = "";
 
         //Remove whitespace
         infix = infix.replaceAll("\\s", "");
 
-        //while (infix has characters left to parse){}
+        //While infix has characters left to process
+        while (infix.length() > 0){
 
-        char nextCharacter = infix.charAt(0);
+            char nextCharacter = infix.charAt(0);
 
-        infix = infix.substring(1);
-        
-        switch (nextCharacter){
-            case variable:
-            //Append nextCharacter to postfix
-            break;
-            case '^' :
-                operatorStack.push(nextCharacter);
-                break;
-            case '+' : case '-' : case '*' : case '/' :
-                while (!operatorStack.isEmpty() and precedence of nextCharacter <= precedence of operatorStack.peek()){
-                    //Append operatorStack.peek() to postfix
-                    operatorStack.pop();
-                }
-                operatorStack.push(nextCharacter);
-                break;
-            case '(' :
-                operatorStack.push(nextCharacter);
-                break;
-            case ')' : // Stack is not empty if infix expression is valid
-                char topOperator = operatorStack.pop();
-                while (topOperator != '('){
-                    //Append topOperator to postfix
-                    topOperator = operatorStack.pop();
-                }
-                break;
-            default: break; // Ignore unexpected characters
+            infix = infix.substring(1);
+            
+            switch (nextCharacter){
+                
+                case '^' :
+                    operatorStack.push(nextCharacter);
+                    break;
+                case '+' : case '-' : case '*' : case '/' :
+                    while (!operatorStack.isEmpty() and precedence of nextCharacter <= precedence of operatorStack.peek()){
+                        //Append operatorStack.peek() to postfix
+                        operatorStack.pop();
+                    }
+                    operatorStack.push(nextCharacter);
+                    break;
+                case '(' :
+                    operatorStack.push(nextCharacter);
+                    break;
+                case ')' : // Stack is not empty if infix expression is valid
+                    char topOperator = operatorStack.pop();
+                    while (topOperator != '('){
+                        //Append topOperator to postfix
+                        topOperator = operatorStack.pop();
+                    }
+                    break;
+                default: 
+                    //Accept only characters from the alphabet as valid variables
+                    if((nextCharacter >= 'a' && nextCharacter <= 'z') || (nextCharacter >= 'A' && nextCharacter <= 'Z')){
+                        postfix += nextCharacter;
+                    }
+                    break; // Ignore unexpected characters
+            }
         }
-    
+
         while (!operatorStack.isEmpty()){
             char topOperator = operatorStack.pop(); 
             //Append topOperator to postfix
