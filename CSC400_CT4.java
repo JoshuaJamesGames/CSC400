@@ -62,5 +62,35 @@ public class CSC400_CT4 {
         return postfix;
     }
 
+    public boolean checkPrecedence(char currentOperator, char nextOperator){
+        //compares the currentOperator to nextOperator
+        //if nextOperator is ^, +, -, *, / and <= in precedence, return true
+
+        //convert operators to numeric values
+        //We'll use a switch since convertToPostfix does
+        int currentOperatorValue = operatorValue(currentOperator);
+        int nextOperatorValue = operatorValue(nextOperator);
+
+        //Need an if/else stack when using boolean logic
+        //compare the values
+        if(nextOperatorValue <= currentOperatorValue){
+            return true;
+        }
+        
+        return false;
+    }
+
+    public int operatorValue(char operator){
+        //Since ASCII values are not in-order we need to assign our own
+
+        switch(operator){
+            case '^': return 3;
+            case '*': case '/': return 2;
+            case '+': case '-': return 1;
+        }
+        //0 represents a non-valid operator, should be a variable
+        return 0;
+    }
+
 }
 
