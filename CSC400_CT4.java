@@ -32,14 +32,20 @@ public class CSC400_CT4 {
 
         //While infix has characters left to process
         while (infix.length() > 0){
-            System.out.print(postfix + "  ");
-            System.out.print(infix + "  ");
-            System.out.println(operatorStack);
 
+            //Remove comments to see the postfix, infix , and stack operations
+            
+            //System.out.print(postfix + "  ");
+            //System.out.print(infix + "  ");
+            //System.out.println(operatorStack);
+            
+            //First character using index 0
             char nextCharacter = infix.charAt(0);
 
+            //Remove the first character from infix
             infix = infix.substring(1);
             
+            //Logic for processing characters from textbook
             switch (nextCharacter){
                 
                 case '^' :
@@ -47,7 +53,7 @@ public class CSC400_CT4 {
                     break;
                 case '+' : case '-' : case '*' : case '/' :
                     while (!operatorStack.isEmpty() && checkPrecedence(nextCharacter, operatorStack.peek())){
-                        //Append operatorStack.peek() to postfix
+                        //Append operatorStack to postfix
                         postfix += operatorStack.pop();
                     }
                     operatorStack.push(nextCharacter);
@@ -55,7 +61,9 @@ public class CSC400_CT4 {
                 case '(' :
                     operatorStack.push(nextCharacter);
                     break;
-                case ')' : // Stack is not empty if infix expression is valid
+                case ')' : 
+                    // Stack is not empty if infix expression is valid 
+                    //because at least '(' will be present
                     char topOperator = operatorStack.pop();
                     while (topOperator != '('){
                         //Append topOperator to postfix
@@ -100,6 +108,7 @@ public class CSC400_CT4 {
 
     public static int operatorValue(char operator){
         //Since ASCII values are not in-order we need to assign our own
+        //Higher value == higher precedence
 
         switch(operator){
             case '(': case ')': return 4;
@@ -107,7 +116,7 @@ public class CSC400_CT4 {
             case '*': case '/': return 2;
             case '+': case '-': return 1;
         }
-        //0 represents a non-valid operator, should be a variable
+        //0 represents a non-valid operator, should be a variable a-z or A-Z
         return 0;
     }
 
