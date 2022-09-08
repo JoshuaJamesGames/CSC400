@@ -30,9 +30,9 @@ public class CSC400_CT4 {
                     operatorStack.push(nextCharacter);
                     break;
                 case '+' : case '-' : case '*' : case '/' :
-                    while (!operatorStack.isEmpty() and precedence of nextCharacter <= precedence of operatorStack.peek()){
+                    while (!operatorStack.isEmpty() && checkPrecedence(nextCharacter, operatorStack.peek())){
                         //Append operatorStack.peek() to postfix
-                        operatorStack.pop();
+                        postfix += operatorStack.pop();
                     }
                     operatorStack.push(nextCharacter);
                     break;
@@ -43,6 +43,7 @@ public class CSC400_CT4 {
                     char topOperator = operatorStack.pop();
                     while (topOperator != '('){
                         //Append topOperator to postfix
+                        postfix += topOperator;
                         topOperator = operatorStack.pop();
                     }
                     break;
@@ -58,6 +59,7 @@ public class CSC400_CT4 {
         while (!operatorStack.isEmpty()){
             char topOperator = operatorStack.pop(); 
             //Append topOperator to postfix
+            postfix += topOperator;
         }
         return postfix;
     }
