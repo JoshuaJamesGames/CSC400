@@ -18,6 +18,10 @@ public class Expression {
         return postfix;
     }
 
+    public String getInfix(){
+        return infix;
+    }
+
     
     static String convertToPostfix(String infix){
 
