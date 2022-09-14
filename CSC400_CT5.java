@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /*
  * Imagine an array of n items from which you can choose. 
  * You will place the items you choose into a knapsack of size k. 
@@ -24,20 +26,23 @@ public class CSC400_CT5 {
     public static void main(String[] args) {
 
         
-        KnapsackItem[] items = new KnapsackItem[6];
+        Stack<KnapsackItem> items = new Stack<KnapsackItem>();
 
         //Sample items from the assignment
-        items[0]= new KnapsackItem(1,50000, "rare coin");
-        items[1]= new KnapsackItem(2, 7000, "small gold coin");
-        items[2]= new KnapsackItem(4, 10000, "packet of stamps");
-        items[3]= new KnapsackItem(4, 11000, "pearl necklace");
-        items[4]= new KnapsackItem(5, 12000, "silver bar");
-        items[5]= new KnapsackItem(10, 60000, "painting");
+
+        items.add(new KnapsackItem(1,50000, "rare coin"));
+        items.add(new KnapsackItem(2, 7000, "small gold coin"));
+        items.add(new KnapsackItem(4, 10000, "packet of stamps"));
+        items.add(new KnapsackItem(4, 11000, "pearl necklace"));
+        items.add(new KnapsackItem(5, 12000, "silver bar"));
+        items.add(new KnapsackItem(10, 60000, "painting"));
 
 
     }
 
     public Knapsack maxKnapsack(Knapsack sack, KnapsackItem[] items, int nextItemPosition){
+
+        //base case: sack is full or cannot contain any more items
 
         return null;
     }
