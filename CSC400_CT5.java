@@ -22,7 +22,19 @@
 
 public class CSC400_CT5 {
     public static void main(String[] args) {
+
         
+        KnapsackItem[] items = new KnapsackItem[6];
+
+        //Sample items from the assignment
+        items[0]= new KnapsackItem(1,50000, "rare coin");
+        items[1]= new KnapsackItem(2, 7000, "small gold coin");
+        items[2]= new KnapsackItem(4, 10000, "packet of stamps");
+        items[3]= new KnapsackItem(4, 11000, "pearl necklace");
+        items[4]= new KnapsackItem(5, 12000, "silver bar");
+        items[5]= new KnapsackItem(10, 60000, "painting");
+
+
     }
 
     public Knapsack maxKnapsack(Knapsack sack, KnapsackItem[] items, int nextItemPosition){
