@@ -27,7 +27,8 @@ public class CSC400_CT5 {
 
         
         Stack<KnapsackItem> items = new Stack<KnapsackItem>();
-
+        Knapsack sack = new Knapsack(10);
+        
         //Sample items from the assignment
 
         items.add(new KnapsackItem(1,50000, "rare coin"));
@@ -37,12 +38,16 @@ public class CSC400_CT5 {
         items.add(new KnapsackItem(5, 12000, "silver bar"));
         items.add(new KnapsackItem(10, 60000, "painting"));
 
+        
+
+        System.out.println(sack.getContents());
 
     }
 
-    public Knapsack maxKnapsack(Knapsack sack, KnapsackItem[] items, int nextItemPosition){
+    public Knapsack maxKnapsack(Knapsack sack, Stack<KnapsackItem> items, int nextItemPosition){
 
-        //base case: sack is full or cannot contain any more items
+        //base case: sack is full or cannot contain any more items and all items considered
+
 
         return null;
     }

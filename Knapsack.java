@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Knapsack {
     
     private int size = 0;
-    private ArrayList<String> contents;
+    private ArrayList<KnapsackItem> contents = new ArrayList<KnapsackItem>();
     private int value = 0;
     private int contentSize = 0;
 
@@ -13,9 +13,9 @@ public class Knapsack {
 
     public boolean add(KnapsackItem item){
 
-        if((contentSize + item.size) <= this.size){
+        if((this.contentSize + item.size) <= this.size){
 
-            contents.add(item.name);
+            contents.add(item);
             value += item.value;
             contentSize += item.size;
 
