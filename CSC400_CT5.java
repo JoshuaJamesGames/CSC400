@@ -42,39 +42,36 @@ public class CSC400_CT5 {
 
     }
 
-    public static Knapsack maxKnapsack(Knapsack sack, KnapsackItem[] items, int nextItemPosition){
-
-        KnapsackItem nextItem = items[nextItemPosition];
-        
-        Knapsack sackWithoutItem = sack;
-        
-        Knapsack sackWithItem = sack.add(nextItem);
-
-        System.out.println(sackWithItem + " " + sackWithItem.getContents() +"\n" 
-        + sackWithoutItem + " "+sackWithoutItem.getContents() +"\n");
-
-        //base case: sack is full or cannot contain any more items and all items considered
-        if(nextItemPosition == 0){
-            
-            if(sackWithItem.getValue() > sackWithoutItem.getValue()){
-                return sackWithItem;
-            }else{
-                return sackWithoutItem;
-            }
-
+    //Helper Function to compare the value of 2 Knapsacks
+    public static Knapsack Max(Knapsack sackWithItem, Knapsack sackWithoutItem){
+        if(sackWithItem.getValue() > sackWithoutItem.getValue()){
+            return sackWithItem;
         }else{
-
-            sackWithoutItem = maxKnapsack(sackWithoutItem, items, nextItemPosition -1);
-            sackWithItem = maxKnapsack(sackWithItem, items, nextItemPosition - 1);
-            
-            if(sackWithItem.getValue() > sackWithoutItem.getValue()){
-                return sackWithItem;
-            }else{
-                return sackWithoutItem;
-            }            
-            
+            return sackWithoutItem;
         }
-            
+    }
+
+    public static Knapsack maxKnapsack(Knapsack sack, KnapsackItem[] items, int nextItemPosition){
+        
+        //Get the next KnapsackItem
+        KnapsackItem nextItem = items[nextItemPosition];  
+        
+        //Create copies to avoid reference errors
+        Knapsack sackWithoutItem = sack.copy();               
+        Knapsack sackWithItem = sack.copy();
+        //add nextItem to sackWithItem
+        sackWithItem.add(nextItem);
+
+        //base case: all items considered
+        if(nextItemPosition == 0){   
+
+            return Max(sackWithItem, sackWithoutItem);
+
+        }    
+        
+                
+        return Max(maxKnapsack(sackWithItem, items, nextItemPosition - 1), maxKnapsack(sackWithoutItem, items, nextItemPosition -1));         
+                
         
     
     }

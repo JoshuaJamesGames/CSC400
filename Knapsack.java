@@ -42,6 +42,17 @@ public class Knapsack {
 
     }
 
+    public Knapsack copy(){
+
+        Knapsack copyKnapsack = new Knapsack(this.size);
+        copyKnapsack.setContents(this.contents);
+        copyKnapsack.setSize(this.size);
+        copyKnapsack.setValue(this.value);
+        copyKnapsack.setContentSize(this.contentSize);
+
+        return copyKnapsack;
+    }
+
     public int getSize(){
         return size;
     }
