@@ -11,39 +11,21 @@ public class Knapsack {
         this.size = size;
     }
 
-    public Knapsack add(KnapsackItem item){
-
+    public void add(KnapsackItem item){
+        //if the item will fit, add it
         if((this.contentSize + item.size) <= this.size){
 
             contents.add(item);
             value += item.value;
             contentSize += item.size;
 
-            //Return a new Knapsack with the item to avoid a reference copy
-            Knapsack knapsackWithItem = new Knapsack(this.size);
-            knapsackWithItem.setContents(this.contents);
-            knapsackWithItem.setSize(this.size);
-            knapsackWithItem.setValue(this.value);
-            knapsackWithItem.setContentSize(this.contentSize);
-
-            return knapsackWithItem;
-
-        }else{
-
-            Knapsack knapsackWithoutItem = new Knapsack(this.size);
-            knapsackWithoutItem.setContents(this.contents);
-            knapsackWithoutItem.setSize(this.size);
-            knapsackWithoutItem.setValue(this.value);
-            knapsackWithoutItem.setContentSize(this.contentSize);
-            
-            return knapsackWithoutItem;
-        }
-        
+        }       
 
     }
 
+    //Needed a copy function to stop reference copy errors from add()
     public Knapsack copy(){
-
+        
         Knapsack copyKnapsack = new Knapsack(this.size);
         copyKnapsack.setContents(this.contents);
         copyKnapsack.setSize(this.size);

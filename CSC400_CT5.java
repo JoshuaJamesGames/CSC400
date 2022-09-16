@@ -36,7 +36,12 @@ public class CSC400_CT5 {
         items[4] = new KnapsackItem(5, 12000, "silver bar");
         items[5] = new KnapsackItem(10, 60000, "painting");
 
+        System.out.println("The array of items is as follows:\n");
+        for(int i = 0; i < items.length; i++){
+            System.out.println(items[i]);
+        }
         
+        System.out.println("\nThe maximum value using the items is:\n");
 
         System.out.println(maxKnapsack(sack, items, 5).getContents());
 
