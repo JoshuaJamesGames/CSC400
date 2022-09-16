@@ -41,9 +41,12 @@ public class CSC400_CT5 {
             System.out.println(items[i]);
         }
         
-        System.out.println("\nThe maximum value using the items is:\n");
+        sack = maxKnapsack(sack, items, 5);
 
-        System.out.println(maxKnapsack(sack, items, 5).getContents());
+        System.out.print("\nThe maximum value is: "); 
+        System.out.println(sack.getValue());
+        System.out.println("Using the following items:");
+        System.out.println(sack.getContents());
 
     }
 
