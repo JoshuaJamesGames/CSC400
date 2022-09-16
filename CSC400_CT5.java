@@ -55,20 +55,14 @@ public class CSC400_CT5 {
         //base case: sack is full or cannot contain any more items and all items considered
         if(nextItemPosition == 0){
 
+            maxKnapsack(sack, items, nextItemPosition - 1);
+
             if(sackWithItem.getValue() > sackWithoutItem.getValue()){
                 return sackWithItem;
             }else{
                 return sackWithoutItem;
             }
 
-        }else{
-            
-            if(sackWithItem.getValue() > sackWithoutItem.getValue()){
-                return sackWithItem = maxKnapsack(sackWithItem, items, nextItemPosition -1);
-            }else{
-                return sackWithoutItem = maxKnapsack(sackWithoutItem, items, nextItemPosition -1);
-            }
-            
         }
             
         
