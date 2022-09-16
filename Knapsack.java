@@ -29,7 +29,14 @@ public class Knapsack {
             return knapsackWithItem;
 
         }else{
-            return null;
+
+            Knapsack knapsackWithoutItem = new Knapsack(this.size);
+            knapsackWithoutItem.setContents(this.contents);
+            knapsackWithoutItem.setSize(this.size);
+            knapsackWithoutItem.setValue(this.value);
+            knapsackWithoutItem.setContentSize(this.contentSize);
+            
+            return knapsackWithoutItem;
         }
         
 

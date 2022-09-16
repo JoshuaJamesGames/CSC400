@@ -47,22 +47,32 @@ public class CSC400_CT5 {
         KnapsackItem nextItem = items[nextItemPosition];
         
         Knapsack sackWithoutItem = sack;
-        sack.add(nextItem);
-        Knapsack sackWithItem = sack;
+        
+        Knapsack sackWithItem = sack.add(nextItem);
 
-        System.out.println(sackWithItem + "\n" + sackWithoutItem+ "\n");
+        System.out.println(sackWithItem + " " + sackWithItem.getContents() +"\n" 
+        + sackWithoutItem + " "+sackWithoutItem.getContents() +"\n");
 
         //base case: sack is full or cannot contain any more items and all items considered
         if(nextItemPosition == 0){
-
-            maxKnapsack(sack, items, nextItemPosition - 1);
-
+            
             if(sackWithItem.getValue() > sackWithoutItem.getValue()){
                 return sackWithItem;
             }else{
                 return sackWithoutItem;
             }
 
+        }else{
+
+            sackWithoutItem = maxKnapsack(sackWithoutItem, items, nextItemPosition -1);
+            sackWithItem = maxKnapsack(sackWithItem, items, nextItemPosition - 1);
+            
+            if(sackWithItem.getValue() > sackWithoutItem.getValue()){
+                return sackWithItem;
+            }else{
+                return sackWithoutItem;
+            }            
+            
         }
             
         
