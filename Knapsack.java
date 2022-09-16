@@ -11,7 +11,7 @@ public class Knapsack {
         this.size = size;
     }
 
-    public boolean add(KnapsackItem item){
+    public Knapsack add(KnapsackItem item){
 
         if((this.contentSize + item.size) <= this.size){
 
@@ -19,10 +19,17 @@ public class Knapsack {
             value += item.value;
             contentSize += item.size;
 
-            return true;
+            //Return a new Knapsack with the item to avoid a reference copy
+            Knapsack knapsackWithItem = new Knapsack(this.size);
+            knapsackWithItem.setContents(this.contents);
+            knapsackWithItem.setSize(this.size);
+            knapsackWithItem.setValue(this.value);
+            knapsackWithItem.setContentSize(this.contentSize);
+
+            return knapsackWithItem;
 
         }else{
-            return false;
+            return null;
         }
         
 
@@ -32,15 +39,34 @@ public class Knapsack {
         return size;
     }
 
+    public void setSize(int size){
+        this.size = size;
+    }
+
     public String getContents(){
         return contents.toString();
+    }
+
+    public void setContents(ArrayList<KnapsackItem> contents){
+        this.contents.clear();
+        for(int i = 0; i < contents.size(); i++){
+            this.contents.add(contents.get(i));
+        }
     }
 
     public int getValue(){
         return value;
     }
 
+    public void setValue(int value){
+        this.value = value;
+    }
+
     public int getContentSize(){
         return contentSize;
+    }
+
+    public void setContentSize(int contentSize){
+        this.contentSize = contentSize;
     }
 }
