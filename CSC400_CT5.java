@@ -13,6 +13,17 @@ Consider the last entry in the portion first.
 
 public class CSC400_CT5 {
     public static void main(String[] args) {
-        Exersizes homework = new Excersizes();
+        //Exercizes homework = new Exercizes();
+
+        System.out.println(Exercizes.factorial(5));
+
+        System.out.println(Exercizes.reverseFactorial(5));
+
+        String testString = "This is a Test";
+
+        Exercizes.displayPortion(testString.toCharArray(), 6);
+
+        System.out.println();
+        
     }
 }

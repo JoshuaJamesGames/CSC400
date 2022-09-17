@@ -1,5 +1,4 @@
-public class Excersizes {
-    
+public class Exercizes {      
     
     
     public static long factorial(int number){
@@ -20,9 +19,9 @@ public class Excersizes {
             return 1;
     }
 
-    public static void displayPortion(Object array[], int end){
+    public static void displayPortion(char array[], int end){
 
-        System.out.println(array[end].toString());
+        System.out.print(array[end]);
 
         if(end > 0){   
 
