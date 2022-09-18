@@ -1,4 +1,4 @@
-public class Exercizes {      
+public class Exercises {      
     
     
     public static long factorial(int number){
