@@ -13,14 +13,18 @@ Consider the last entry in the portion first.
 
 public class CSC400_CT5 {
     public static void main(String[] args) {
-        
+
+        System.out.print("The factorial of 5 using factorial() is: ");
         System.out.println(Exercises.factorial(5));
 
+        System.out.print("The factorial of 5 using reverseFactorial() is: ");
         System.out.println(Exercises.reverseFactorial(5));
 
+        //Create a testString for a Char[]
         String testString = "This is a Test";
 
-        Exercises.displayPortion(testString.toCharArray(), 6);
+        //Process the end index and display the front portion of
+        Exercises.displayPortion(testString.toCharArray(), 4, 6);
 
         System.out.println();
         
