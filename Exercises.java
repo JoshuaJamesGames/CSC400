@@ -2,7 +2,7 @@ public class Exercises {
     
     
     public static long factorial(int number){
-
+        //Solves factorial from number -> 1 (1*2*3*4..*number)
         if(number <= 1){
             return 1;
         }else{
@@ -11,8 +11,8 @@ public class Exercises {
 
     }
 
-    public static long reverseFactorial(int number)
-    {
+    public static long reverseFactorial(int number){
+        //Solves factorial from 1 -> number (number...*4*3*2*1)
         if(number >= 1)
             return number * reverseFactorial(number - 1);
         else
@@ -20,7 +20,7 @@ public class Exercises {
     }
 
     public static void displayPortion(char array[], int end){
-
+        //Prints the portion of array starting with the end index -> index 0
         System.out.print(array[end]);
 
         if(end > 0){   
