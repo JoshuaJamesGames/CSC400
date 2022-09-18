@@ -19,13 +19,14 @@ public class Exercises {
             return 1;
     }
 
-    public static void displayPortion(char array[], int end){
-        //Prints the portion of array starting with the end index -> index 0
+    public static void displayPortion(char array[],int start, int end){
+        //Prints the portion of array starting with the end index -> index start
+        //Reversing the portion
         System.out.print(array[end]);
 
-        if(end > 0){   
+        if(end > start){   
 
-            displayPortion(array, end-1);
+            displayPortion(array, start, end-1);
 
         }
     }
