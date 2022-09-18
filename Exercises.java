@@ -2,8 +2,9 @@ public class Exercises {
     
     
     public static long reverseFactorial(int start, int number){
+
         //Solves factorial from number -> 1 (1*2*3*4..*number)
-        
+        //Uses a start index to reverse the order
         if(start == number){  
             System.out.print(number + " = ");          
             return start;
@@ -29,6 +30,7 @@ public class Exercises {
     }
 
     public static void displayPortion(char array[],int start, int end){
+
         //Prints the portion of array starting with the end index -> index start
         //Reversing the portion
         System.out.print(array[end]);

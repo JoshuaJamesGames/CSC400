@@ -24,7 +24,7 @@ public class CSC400_CT5 {
         String testString = "This is a Test";
 
         //Process the end index to start index and display in reverse
-        System.out.print("The 6th index to the 4th in reverse of " + testString+ "is: ");
+        System.out.print("The 6th index to the 4th in reverse of " + testString+ " is: ");
         Exercises.displayPortion(testString.toCharArray(), 4, 6);
 
         System.out.println();
