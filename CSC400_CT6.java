@@ -11,6 +11,9 @@ You can use your method to test whether a sort method has executed correctly.
 public class CSC400_CT6 {
     public static void main(String[] args) {
         //Create several array test cases to use with Sorted.ascending()
-        
+        int[] testInt = new int[] {1,2,3,4,5};
+
+        System.out.println(Sorted.ascending(testInt));
+
     }
 }
