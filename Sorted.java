@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class Sorted {
     
-    public static <T extends Comparable<T>> boolean ascending(T[] checkArray){
+    public static <T extends Comparable<T>> boolean ascending(ArrayList<T> checkArray){
 
         int index = 0;
 
-        while(index < checkArray.length -1){
-            if(checkArray[index].compareTo(checkArray[index +1]) > 0){
+        while(index < checkArray.size() -1){
+            if(checkArray.get(index).compareTo(checkArray.get(index +1)) > 0){
                 return false;
             } 
             index++;           
