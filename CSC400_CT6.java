@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 From Chapter 15 of Carrano & Henry, 2019, p. 458
 
@@ -22,7 +24,20 @@ public class CSC400_CT6 {
         System.out.println("{1, 2, 3, 4, 5} is sorted: "+Sorted.ascending(testInt));
         System.out.println("{1, 2, 3, 5, 4} is sorted: "+Sorted.ascending(testIntFalse));
 
+        ArrayList<Integer> testArrayList = new ArrayList<Integer>();
+        for(int index = 1; index < 6; index++){
+            testArrayList.add(index);
+        }
+        ArrayList<Integer> testArrayListFalse = new ArrayList<Integer>();
+        for(int index = 5; index >= 1; index--){
+            testArrayListFalse.add(index);
+        }        
+        System.out.println("ArrayList {1, 2, 3, 4, 5} is sorted: "+Sorted.ascending(testArrayList));        
+        System.out.println("ArrayListFalse {5, 4, 3, 2, 1} is sorted: "+Sorted.ascending(testArrayListFalse));
+
         
+
+
 
     }
 
