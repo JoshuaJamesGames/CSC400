@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class Order {
+public class Order implements Comparable<Order>{
 
     String lastName = "";
     int orderNumber = -1;
@@ -38,4 +38,17 @@ public class Order {
         }
     }
 
+    //Comparable interface sorts by totalCost
+
+    public int compareTo(Order a){
+        if (totalCost < a.totalCost){
+            return -1;
+        }else if(totalCost > a.totalCost){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    
 }

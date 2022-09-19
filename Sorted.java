@@ -33,6 +33,21 @@ public class Sorted {
         return true;
     }
 
+    //Generic Array without Comparator
+    public static <T extends Comparable<? super T>> boolean ascending(T[] checkArray){
+
+        int index = 0;
+
+        while(index < checkArray.length -1){
+            if(checkArray[index].compareTo(checkArray[index +1]) > 0){
+                return false;
+            } 
+            index++;           
+        }
+
+        return true;
+    }
+
     //Byte
     public static boolean ascending(byte[] checkArray){
 

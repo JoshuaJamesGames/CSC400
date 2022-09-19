@@ -24,6 +24,7 @@ public class CSC400_CT6 {
         System.out.println("{1, 2, 3, 4, 5} is sorted: "+Sorted.ascending(testInt));
         System.out.println("{1, 2, 3, 5, 4} is sorted: "+Sorted.ascending(testIntFalse));
 
+        //An ArrayList
         ArrayList<Integer> testArrayList = new ArrayList<Integer>();
         for(int index = 1; index < 6; index++){
             testArrayList.add(index);
@@ -35,9 +36,16 @@ public class CSC400_CT6 {
         System.out.println("ArrayList {1, 2, 3, 4, 5} is sorted: "+Sorted.ascending(testArrayList));        
         System.out.println("ArrayListFalse {5, 4, 3, 2, 1} is sorted: "+Sorted.ascending(testArrayListFalse));
 
-        
+        //An array of Orders
+        Order[] orders = new Order[3];
+        orders[0] = new Order("Thompson", 1, 1.99);
+        orders[1] = new Order("Smith", 2, 3.50);
+        orders[2] = new Order("Zachary", 3, 15.99);
+        System.out.println("Orders {Thompson, Smith, Zachary} is in Name order: "+ Sorted.ascending(orders, new Order.Sortbyname()));
+        System.out.println("Orders {1, 2, 3} is in Order # order: "+ Sorted.ascending(orders, new Order.SortByOrder()));
 
-
+        //Comparable Order - Cost basis
+        System.out.println("Order {1.99, 3.50, 15.00} is in Cost order: "+ Sorted.ascending(orders));
 
     }
 
