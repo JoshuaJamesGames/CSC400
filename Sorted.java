@@ -4,10 +4,11 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index].compareTo(checkArray[index +1]) > 0){
                 return false;
-            }            
+            } 
+            index++;           
         }
 
         return true;
@@ -18,10 +19,11 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            }   
+            index++;         
         }
 
         return true;
@@ -32,10 +34,11 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            }  
+            index++;          
         }
 
         return true;
@@ -46,10 +49,11 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            }  
+            index++;          
         }
 
         return true;
@@ -60,10 +64,11 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            }  
+            index++;          
         }
 
         return true;
@@ -74,10 +79,11 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            }  
+            index++;                     
         }
 
         return true;
@@ -88,24 +94,26 @@ public class Sorted {
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            }     
+            index++;       
         }
 
         return true;
     }
-    
+
     //short
     public static boolean ascending(short[] checkArray){
 
         int index = 0;
 
-        while(index++ < checkArray.length){
+        while(index < checkArray.length -1){
             if(checkArray[index] > (checkArray[index +1])){
                 return false;
-            }            
+            } 
+            index++;           
         }
 
         return true;
