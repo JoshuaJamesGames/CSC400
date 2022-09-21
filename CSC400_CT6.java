@@ -14,11 +14,13 @@ public class CSC400_CT6 {
     public static void main(String[] args) {
         //Create several array test cases to use with Sorted.ascending()
 
+        //An Array of Char
         char[] testChar = new char[]{'a','b','c','d','e'};
         char[] testCharFalse = new char[]{'a','b','c','e','d'};
         System.out.println("{a, b, c, d, e} is sorted: "+ Sorted.ascending(testChar));
         System.out.println("{a, b, c, e, d} is sorted: "+ Sorted.ascending(testCharFalse));
         
+        //An Array of Int
         int[] testInt = new int[] {1,2,3,4,5};
         int[] testIntFalse = new int[] {1,2,3,5,4};
         System.out.println("{1, 2, 3, 4, 5} is sorted: "+Sorted.ascending(testInt));
@@ -46,6 +48,19 @@ public class CSC400_CT6 {
 
         //Comparable Order - Cost basis
         System.out.println("Order {1.99, 3.50, 15.00} is in Cost order: "+ Sorted.ascending(orders));
+
+        //Create an ArrayList of Order Class
+        ArrayList<Order> testOrderArrayList = new ArrayList<Order>();        
+        testOrderArrayList.add(new Order("Thompson", 1, 1.99));
+        testOrderArrayList.add(new Order("Smith", 2, 3.50));
+        testOrderArrayList.add(new Order("Zachary", 3, 15.99));
+        System.out.println("ArrayList of Orders {1.99, 3.50, 15.00} is in Cost order: "+ Sorted.ascending(testOrderArrayList));
+        //Add an order with an out-of-order cost.
+        testOrderArrayList.add(new Order("Fellows", 4, 12.49));
+        System.out.println("ArrayList of Orders {1.99, 3.50, 15.00, 12.49} is in Cost order: "+ Sorted.ascending(testOrderArrayList));
+
+
+
 
     }
 
