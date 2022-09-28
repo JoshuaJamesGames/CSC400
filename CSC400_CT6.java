@@ -43,7 +43,7 @@ public class CSC400_CT6 {
         orders[0] = new Order("Thompson", 1, 1.99);
         orders[1] = new Order("Smith", 2, 3.50);
         orders[2] = new Order("Zachary", 3, 15.99);
-        System.out.println("Orders {Thompson, Smith, Zachary} is in Name order: "+ Sorted.ascending(orders, new Order.Sortbyname()));
+        System.out.println("Orders {Thompson, Smith, Zachary} is in Name order: "+ Sorted.ascending(orders, new Order.SortByName()));
         System.out.println("Orders {1, 2, 3} is in Order # order: "+ Sorted.ascending(orders, new Order.SortByOrder()));
 
         //Comparable Order - Cost basis

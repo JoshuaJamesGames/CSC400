@@ -12,9 +12,25 @@ public class Orders {
         orders.remove(order);
     }
 
+    public int size(){
+        return orders.size();
+    }
+
+    public Order[] toArray(){
+
+        Order[] returnArray = new Order[this.orders.size()];
+
+        for(int i = 0; i < returnArray.length; i++){
+            returnArray[i] = this.orders.get(i);
+        }
+
+        return returnArray;
+    }
+
     public void printOrders(){
         for(int i = 0; i < orders.size(); i++){
             System.out.println(String.format("(%d) %s", i, orders.get(i)));
         }
     }
+    
 }

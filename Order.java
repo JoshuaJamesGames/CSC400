@@ -29,7 +29,7 @@ public class Order implements Comparable<Order>{
  
     
     //Comparator interface for sorting by name
-    static class Sortbyname implements Comparator<Order>{
+    static class SortByName implements Comparator<Order>{
     
         //Sort in ascending order of name
         public int compare(Order a, Order b){

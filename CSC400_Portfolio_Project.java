@@ -26,8 +26,29 @@ and display the order list from the queue.
 
 public class CSC400_Portfolio_Project {
     public static void main(String[] args) {
-        
-  
+
+        Orders orders = new Orders();
+        Display ordersDisplay = new Display(orders);
+                
+        intro();
+
+        orderLoop(orders, ordersDisplay);
+
+        outtro();
   
     }
+
+    public static void intro(){
+
+    }
+
+    public static void orderLoop(Orders orders, Display orderDisplay){
+
+    }
+
+    public static void outtro(){
+
+    }
 }
+
+
