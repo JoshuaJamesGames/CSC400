@@ -35,7 +35,7 @@ public class CSC400_Portfolio_Project {
                 
         intro();
 
-        orderLoop(orders, ordersDisplay);
+        orderLoop(orders, ordersDisplay, scnr);
 
         outtro();
   
