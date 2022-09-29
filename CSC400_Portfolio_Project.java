@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
 Write a program that handles the order list for an online retailer. 
 Your program should contain a minimum of three classes:
@@ -29,6 +31,7 @@ public class CSC400_Portfolio_Project {
 
         Orders orders = new Orders();
         Display ordersDisplay = new Display(orders);
+        Scanner scnr = new Scanner(System.in);
                 
         intro();
 
@@ -42,7 +45,85 @@ public class CSC400_Portfolio_Project {
 
     }
 
-    public static void orderLoop(Orders orders, Display orderDisplay){
+    public static void orderLoop(Orders orders, Display orderDisplay, Scanner scnr){
+
+        
+        String choice = "";
+        String name = "";
+
+        while(!choice.equals("q")){
+
+            if(name.equals("")){
+                name = getName(scnr);
+            }
+            showChoices(name);
+            choice = scnr.nextLine();
+
+            if(choice.equals("1")){
+                addOrder(name);
+            }else if(!choice.equals("2")){
+                removeOrder(name);
+            }else if(choice.equals("3")){
+                name = getName(scnr);
+            }else{
+                System.out.println("That's not a valid option");
+            }
+
+        }
+
+    }
+
+    public static String getName(Scanner scnr){
+
+        String name = "";
+        System.out.print("What name is this order for?: ");
+        name = scnr.nextLine();
+        return name;
+    }
+
+    public static void showChoices(String name){
+        String[] choices = {
+
+            "(1) Add Order",
+            "(2) Remove Order",
+            "(3) Change Name",
+            "(q) Quit"
+        };
+
+        System.out.println(name + ", what would you like to do?:");
+        for(int i =0; i < choices.length; i++){
+            System.out.println(choices[i]);
+        }
+
+    }
+
+    public static void showMenu(String name){
+        String[] menu = {
+
+            "(1) Hot Dog Combo: $1.50",
+            "(2) Chicken Bake: $2.99",
+            "(3) Torkey Sandwich: $3.99",
+            "(4) Brisket Sandwich: $4.99",
+            "(5) Chicken Ceasar Salad: $3.99",
+            "(6) Pizza Slice: $1.99",
+            "(7) Whole Pizza: $9.99",
+            "(8) Soda: $0.59",
+            "(9) Very Berry Sundae: $1.65",
+            "(n) Nothing"
+
+        };
+
+        System.out.print("What would you like, " + name + "?: ");
+        for(int i =0; i < menu.length; i++){
+            System.out.println(menu[i]);
+        }
+    }
+
+    public static void addOrder(String name){
+        showMenu(name);
+    }
+
+    public static void removeOrder(String name){
 
     }
 
