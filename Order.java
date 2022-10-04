@@ -25,7 +25,7 @@ public class Order implements Comparable<Order>{
         //Sort in ascending order of roll number
         public int compare(Order a, Order b){
  
-            return a.orderNumber - b.orderNumber;
+            return b.orderNumber - a.orderNumber;
         }
     }
  
@@ -36,7 +36,7 @@ public class Order implements Comparable<Order>{
         //Sort in ascending order of name
         public int compare(Order a, Order b){
     
-            return a.lastName.compareTo(b.lastName);
+            return b.lastName.compareTo(a.lastName);
         }
     }
 
