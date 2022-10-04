@@ -16,7 +16,7 @@ public class Order implements Comparable<Order>{
 
     @Override
     public String toString(){
-        return (String.format("Last Name: %s, Order Number: %d, Item: %s, Cost: %2.f",lastName, orderNumber, orderItem, cost));
+        return (String.format("Last Name: %s, Order Number: %d, Item: %s, Cost: %.2f",lastName, orderNumber, orderItem, cost));
     }
 
     //Comparator interface for sorting by roll number

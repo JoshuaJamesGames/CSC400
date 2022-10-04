@@ -12,6 +12,8 @@ public class Display {
     }
 
     public void print(){
-        System.out.println(names.toString() +" " + numbers.toString());
+        for(int i = 0; i < names.length; i++){
+            System.out.println(names[i] + " " + numbers[i]);
+        }        
     }
 }

@@ -29,7 +29,7 @@ public class Orders {
 
     public void printOrders(){
         for(int i = 0; i < orders.size(); i++){
-            System.out.println(String.format("(%d) %s", i, orders.get(i)));
+            System.out.println(String.format("(%d) %s", i, orders.get(i).toString()));
         }
     }
     
