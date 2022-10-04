@@ -3,18 +3,20 @@ import java.util.Comparator;
 public class Order implements Comparable<Order>{
 
     String lastName = "";
+    String orderItem = "";
     int orderNumber = -1;
-    double totalCost = 0.00;
+    double cost = 0.00;
 
-    Order(String lastName, int orderNumber, double totalCost){
+    Order(String lastName, int orderNumber, double totalCost, String orderItem){
         this.lastName = lastName;
+        this.orderItem = orderItem;
         this.orderNumber = orderNumber;
-        this.totalCost = totalCost;
+        this.cost = totalCost;
     }
 
     @Override
     public String toString(){
-        return (String.format("Last Name: %s, Order Number: %d, Total Cost: %2.f",lastName, orderNumber, totalCost));
+        return (String.format("Last Name: %s, Order Number: %d, Item: %s, Cost: %2.f",lastName, orderNumber, orderItem, cost));
     }
 
     //Comparator interface for sorting by roll number
@@ -41,9 +43,9 @@ public class Order implements Comparable<Order>{
     //Comparable interface sorts by totalCost
 
     public int compareTo(Order a){
-        if (totalCost < a.totalCost){
+        if (cost < a.cost){
             return -1;
-        }else if(totalCost > a.totalCost){
+        }else if(cost > a.cost){
             return 1;
         }else{
             return 0;

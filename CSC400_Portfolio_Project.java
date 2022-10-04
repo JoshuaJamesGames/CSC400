@@ -60,9 +60,9 @@ public class CSC400_Portfolio_Project {
             choice = scnr.nextLine();
 
             if(choice.equals("1")){
-                addOrder(name);
+                addOrder(name, scnr, orders);
             }else if(!choice.equals("2")){
-                removeOrder(name);
+                removeOrder(name, scnr);
             }else if(choice.equals("3")){
                 name = getName(scnr);
             }else{
@@ -97,7 +97,9 @@ public class CSC400_Portfolio_Project {
 
     }
 
-    public static void showMenu(String name){
+    public static void addOrder(String name, Scanner scnr, Orders orders){
+
+        String selection = "";
         String[] menu = {
 
             "(1) Hot Dog Combo: $1.50",
@@ -109,21 +111,46 @@ public class CSC400_Portfolio_Project {
             "(7) Whole Pizza: $9.99",
             "(8) Soda: $0.59",
             "(9) Very Berry Sundae: $1.65",
-            "(n) Nothing"
+            "(q) Quit"
 
         };
 
-        System.out.print("What would you like, " + name + "?: ");
+        System.out.println("\nThe Menu: ");
         for(int i =0; i < menu.length; i++){
             System.out.println(menu[i]);
         }
+        System.out.print("What would you like, " + name + "?: ");
+
+        selection = scnr.next();
+        while(!selection.equals("q")){
+
+            int selectedInt = -1;
+            try{
+                selectedInt = Integer.parseInt(selection)-1;
+            } catch(NumberFormatException e){
+                System.out.println("\n That's not on the menu!");
+            }
+            
+            if(selectedInt >= 0 && selectedInt < orders.size()-1){
+
+                String orderItem = menu[selectedInt].split(":")[0];
+                double cost = Double.valueOf(menu[selectedInt].split("$")[1]);
+
+                orders.add(new Order(name, orders.size()+1, cost, orderItem));
+                
+                Display display = new Display(orders);
+                display.print();
+            }
+
+            System.out.println("Anything else?: ");
+
+        }
+
+
+
     }
 
-    public static void addOrder(String name){
-        showMenu(name);
-    }
-
-    public static void removeOrder(String name){
+    public static void removeOrder(String name, Scanner scnr){
 
     }
 
