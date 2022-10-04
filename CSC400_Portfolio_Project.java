@@ -49,28 +49,26 @@ public class CSC400_Portfolio_Project {
 
         
         String choice = "";
-        String name = "";
+        
 
-        if(name.equals("")){
-            name = getName(scnr);
-        }
-        showChoices(name);
+        
+        showChoices();
         choice = scnr.next();
 
         while(!choice.equals("q")){
 
             
             if(choice.equals("1")){
-                addOrder(name, scnr, orders);
+                addOrder(scnr, orders);
             }else if(choice.equals("2")){
-                removeOrder(name, scnr);
+                removeOrder(scnr, orders);
             }else if(choice.equals("3")){
-                name = getName(scnr);
+                orders.printOrders();
             }else{
                 System.out.println("That's not a valid option");
             }
 
-            showChoices(name);
+            showChoices();
             choice = scnr.next();
 
         }
@@ -85,12 +83,12 @@ public class CSC400_Portfolio_Project {
         return name;
     }
 
-    public static void showChoices(String name){
+    public static void showChoices(){
         String[] choices = {
 
             "(1) Add Order",
             "(2) Remove Order",
-            "(3) Change Name",
+            "(3) Show Orders",
             "(q) Quit"
         };
 
@@ -98,13 +96,14 @@ public class CSC400_Portfolio_Project {
         for(int i =0; i < choices.length; i++){
             System.out.println(choices[i]);
         }
-        System.out.print("\n" + name + ", what would you like to do?: ");
+        System.out.print("\nWhat would you like to do?: ");
 
     }
 
-    public static void addOrder(String name, Scanner scnr, Orders orders){
+    public static void addOrder(Scanner scnr, Orders orders){
+        String name = getName(scnr);
+        String selection = "";        
 
-        String selection = "";
         String[] menu = {
 
             "(1) Hot Dog Combo: $1.50",
@@ -156,7 +155,7 @@ public class CSC400_Portfolio_Project {
 
     }
 
-    public static void removeOrder(String name, Scanner scnr){
+    public static void removeOrder(Scanner scnr, Orders orders){
 
     }
 
