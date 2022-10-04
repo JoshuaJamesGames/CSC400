@@ -80,7 +80,7 @@ public class CSC400_Portfolio_Project {
     public static String getName(Scanner scnr){
 
         String name = "";
-        System.out.print("What name is this order for?: ");
+        System.out.print("What name is this for?: ");
         name = scnr.next();
         return name;
     }
@@ -94,10 +94,11 @@ public class CSC400_Portfolio_Project {
             "(q) Quit"
         };
 
-        System.out.println(name + ", what would you like to do?:");
+        System.out.println();
         for(int i =0; i < choices.length; i++){
             System.out.println(choices[i]);
         }
+        System.out.print("\n" + name + ", what would you like to do?: ");
 
     }
 
@@ -123,15 +124,14 @@ public class CSC400_Portfolio_Project {
         for(int i =0; i < menu.length; i++){
             System.out.println(menu[i]);
         }
-        System.out.print("What would you like, " + name + "?: ");
+        System.out.print("\nWhat would you like, " + name + "?: ");
 
         selection = scnr.next();
-        while(!selection.equals("d")){
+        if(!selection.equals("d")){
 
             int selectedInt = -1;
             try{
                 selectedInt = Integer.parseInt(selection)-1;
-                System.out.println(selectedInt + " " + orders.size());
             } catch(NumberFormatException e){
                 System.out.println("\n That's not on the menu!");
             }
@@ -147,8 +147,8 @@ public class CSC400_Portfolio_Project {
                 display.print();
             }
 
-            System.out.println("Anything else?: ");
-            selection = scnr.next();
+            //System.out.println("Anything else?: ");
+            //selection = scnr.next();
 
         }
 

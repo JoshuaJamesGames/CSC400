@@ -12,8 +12,13 @@ public class Display {
     }
 
     public void print(){
-        for(int i = 0; i < names.length; i++){
-            System.out.println(names[i] + " " + numbers[i]);
-        }        
+        System.out.println("\nCurrent Orders - By Name:");
+        for(Order order: names){
+            System.out.println(order);
+        }
+        System.out.println("\nCurrent Orders - By Number:");
+        for(Order order: numbers){
+            System.out.println(order);
+        }       
     }
 }
