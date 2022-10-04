@@ -51,23 +51,27 @@ public class CSC400_Portfolio_Project {
         String choice = "";
         String name = "";
 
+        if(name.equals("")){
+            name = getName(scnr);
+        }
+        showChoices(name);
+        choice = scnr.next();
+
         while(!choice.equals("q")){
 
-            if(name.equals("")){
-                name = getName(scnr);
-            }
-            showChoices(name);
-            choice = scnr.nextLine();
-
+            
             if(choice.equals("1")){
                 addOrder(name, scnr, orders);
-            }else if(!choice.equals("2")){
+            }else if(choice.equals("2")){
                 removeOrder(name, scnr);
             }else if(choice.equals("3")){
                 name = getName(scnr);
             }else{
                 System.out.println("That's not a valid option");
             }
+
+            showChoices(name);
+            choice = scnr.next();
 
         }
 
@@ -77,7 +81,7 @@ public class CSC400_Portfolio_Project {
 
         String name = "";
         System.out.print("What name is this order for?: ");
-        name = scnr.nextLine();
+        name = scnr.next();
         return name;
     }
 
@@ -104,14 +108,14 @@ public class CSC400_Portfolio_Project {
 
             "(1) Hot Dog Combo: $1.50",
             "(2) Chicken Bake: $2.99",
-            "(3) Torkey Sandwich: $3.99",
+            "(3) Turkey Sandwich: $3.99",
             "(4) Brisket Sandwich: $4.99",
             "(5) Chicken Ceasar Salad: $3.99",
             "(6) Pizza Slice: $1.99",
             "(7) Whole Pizza: $9.99",
             "(8) Soda: $0.59",
             "(9) Very Berry Sundae: $1.65",
-            "(q) Quit"
+            "(d) Done"
 
         };
 
@@ -122,20 +126,21 @@ public class CSC400_Portfolio_Project {
         System.out.print("What would you like, " + name + "?: ");
 
         selection = scnr.next();
-        while(!selection.equals("q")){
+        while(!selection.equals("d")){
 
             int selectedInt = -1;
             try{
                 selectedInt = Integer.parseInt(selection)-1;
+                System.out.println(selectedInt + " " + orders.size());
             } catch(NumberFormatException e){
                 System.out.println("\n That's not on the menu!");
             }
             
-            if(selectedInt >= 0 && selectedInt < orders.size()-1){
+            if(selectedInt >= 0 && selectedInt < menu.length-1){
 
-                String orderItem = menu[selectedInt].split(":")[0];
-                double cost = Double.valueOf(menu[selectedInt].split("$")[1]);
-
+                String orderItem = menu[selectedInt].split(":")[0];                
+                double cost = Double.valueOf(menu[selectedInt].split("\\$")[1]);
+                
                 orders.add(new Order(name, orders.size()+1, cost, orderItem));
                 
                 Display display = new Display(orders);
