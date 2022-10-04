@@ -187,7 +187,7 @@ public class CSC400_Portfolio_Project {
     }
 
     public static void outtro(){
-
+        System.out.println("\nGoodbye");
     }
 }
 
