@@ -62,9 +62,21 @@ public class CSC400_Portfolio_Project {
             if(choice.equals("1")){
                 addOrder(scnr, orders);
             }else if(choice.equals("2")){
-                removeOrder(scnr, orders);
+
+                if(orders.size() > 0){
+                    removeOrder(scnr, orders);
+                }else{
+                    System.out.println("There are no orders.");
+                }
+                
             }else if(choice.equals("3")){
-                orders.printOrders();
+
+                if(orders.size() > 0){
+                    orders.printOrders();
+                }else{
+                    System.out.println("There are no orders.");
+                }
+                
             }else{
                 System.out.println("That's not a valid option");
             }
@@ -154,6 +166,7 @@ public class CSC400_Portfolio_Project {
     }
 
     public static void removeOrder(Scanner scnr, Orders orders){
+
         int removeChoice = -1;
 
         orders.printOrders();
