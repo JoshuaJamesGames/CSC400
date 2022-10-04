@@ -144,7 +144,7 @@ public class CSC400_Portfolio_Project {
                 orders.add(new Order(name, orders.size()+1, cost, orderItem));
                 
                 Display display = new Display(orders);
-                orders.printOrders();
+                display.print();
             }
 
             System.out.println("Anything else?: ");
