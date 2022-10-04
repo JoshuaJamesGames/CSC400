@@ -143,6 +143,7 @@ public class CSC400_Portfolio_Project {
             }
 
             System.out.println("Anything else?: ");
+            selection = scnr.next();
 
         }
 
