@@ -179,9 +179,15 @@ public class CSC400_Portfolio_Project {
             }            
 
         if(removeChoice >=0 && removeChoice < orders.size()){
+
+            System.out.println("\nRemoving : "+ orders.getOrderAt(removeChoice).toString());
             orders.remove(orders.getOrderAt(removeChoice));
+
+            Display display = new Display(orders);
+            display.print();
+
         }else{
-            System.out.println("That is not an order");
+            System.out.println("\nThat is not an order");
         }
         
     }
