@@ -8,8 +8,12 @@ public class Orders {
         orders.add(order);
     }
 
-    public void remove(Order order){
+    public void remove(Order order){        
         orders.remove(order);
+    }
+
+    public Order getOrderAt(int index){
+        return orders.get(index);
     }
 
     public int size(){
@@ -28,6 +32,7 @@ public class Orders {
     }
 
     public void printOrders(){
+        System.out.println("\nThe Orders:");
         for(int i = 0; i < orders.size(); i++){
             System.out.println(String.format("(%d) %s", i+1, orders.get(i).toString()));
         }

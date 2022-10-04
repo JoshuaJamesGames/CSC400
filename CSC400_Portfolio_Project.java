@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -146,9 +147,6 @@ public class CSC400_Portfolio_Project {
                 display.print();
             }
 
-            //System.out.println("Anything else?: ");
-            //selection = scnr.next();
-
         }
 
 
@@ -156,7 +154,23 @@ public class CSC400_Portfolio_Project {
     }
 
     public static void removeOrder(Scanner scnr, Orders orders){
+        int removeChoice = -1;
 
+        orders.printOrders();
+        System.out.print("What order would you like to remove?: ");
+
+            try{
+                removeChoice = scnr.nextInt()-1;
+            }catch (InputMismatchException e){
+                System.out.println("That wasn't a number");
+            }            
+
+        if(removeChoice >=0 && removeChoice < orders.size()){
+            orders.remove(orders.getOrderAt(removeChoice));
+        }else{
+            System.out.println("That is not an order");
+        }
+        
     }
 
     public static void outtro(){
