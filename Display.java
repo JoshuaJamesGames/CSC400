@@ -11,6 +11,7 @@ public class Display {
         QuickSort.quickSort(numbers, 0, orders.size()-1, new Order.SortByOrder());
     }
 
+    //Formatted Print by Name and Number
     public void print(){
         System.out.println("\nCurrent Orders - By Name:");
         for(Order order: names){

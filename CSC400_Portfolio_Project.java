@@ -28,39 +28,48 @@ and display the order list from the queue.
 */
 
 public class CSC400_Portfolio_Project {
+    //Mainline logic
     public static void main(String[] args) {
 
+        //Create 2 required classes Orders & Display
         Orders orders = new Orders();
         Display ordersDisplay = new Display(orders);
+        //Need a Scanner to collect input
         Scanner scnr = new Scanner(System.in);
                 
         intro();
 
+        //Just like it sounds
         orderLoop(orders, ordersDisplay, scnr);
 
         outtro();
   
     }
 
+    //Introduction to the program
     public static void intro(){
-
+        System.out.println("Welcome to the Fast Food order display system.");
     }
 
+    //Loops through the choices and responds to user commands
     public static void orderLoop(Orders orders, Display orderDisplay, Scanner scnr){
-
         
         String choice = "";
         
-
-        
+        //Initialize the loop
         showChoices();
         choice = scnr.next();
 
         while(!choice.equals("q")){
 
-            
+            //Choices are given as numbers but collected as strings
+            //to avoid parsing
+
+            //Add Order
             if(choice.equals("1")){
                 addOrder(scnr, orders);
+
+            //Remove Order
             }else if(choice.equals("2")){
 
                 if(orders.size() > 0){
@@ -69,6 +78,7 @@ public class CSC400_Portfolio_Project {
                     System.out.println("There are no orders.");
                 }
                 
+            //Display Orders
             }else if(choice.equals("3")){
 
                 if(orders.size() > 0){
@@ -77,10 +87,12 @@ public class CSC400_Portfolio_Project {
                     System.out.println("There are no orders.");
                 }
                 
+            //Since we aren't parsing, any key not on the list is invalid
             }else{
                 System.out.println("That's not a valid option");
             }
 
+            //Collect the next choice
             showChoices();
             choice = scnr.next();
 
@@ -88,6 +100,7 @@ public class CSC400_Portfolio_Project {
 
     }
 
+    //Collects a name for the Order
     public static String getName(Scanner scnr){
 
         String name = "";
@@ -96,6 +109,7 @@ public class CSC400_Portfolio_Project {
         return name;
     }
 
+    //Prints the menu of Choices
     public static void showChoices(){
         String[] choices = {
 
@@ -113,6 +127,7 @@ public class CSC400_Portfolio_Project {
 
     }
 
+    //Add an order to Orders and triggers Display class
     public static void addOrder(Scanner scnr, Orders orders){
         String name = getName(scnr);
         String selection = "";        
@@ -158,13 +173,10 @@ public class CSC400_Portfolio_Project {
                 Display display = new Display(orders);
                 display.print();
             }
-
         }
-
-
-
     }
 
+    //Removes an order from Orders and triggers Display class
     public static void removeOrder(Scanner scnr, Orders orders){
 
         int removeChoice = -1;
@@ -192,6 +204,7 @@ public class CSC400_Portfolio_Project {
         
     }
 
+    //Classic Outtro
     public static void outtro(){
         System.out.println("\nGoodbye");
     }

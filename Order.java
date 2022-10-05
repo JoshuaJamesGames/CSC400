@@ -7,6 +7,7 @@ public class Order implements Comparable<Order>{
     int orderNumber = -1;
     double cost = 0.00;
 
+    //No default constructor
     Order(String lastName, int orderNumber, double totalCost, String orderItem){
         this.lastName = lastName;
         this.orderItem = orderItem;
@@ -14,6 +15,7 @@ public class Order implements Comparable<Order>{
         this.cost = totalCost;
     }
 
+    //Formatted print
     @Override
     public String toString(){
         return (String.format("Last Name: %s, Order Number: %d, Item: %s, Cost: %.2f",lastName, orderNumber, orderItem, cost));
@@ -41,7 +43,6 @@ public class Order implements Comparable<Order>{
     }
 
     //Comparable interface sorts by totalCost
-
     public int compareTo(Order a){
         if (cost < a.cost){
             return -1;
